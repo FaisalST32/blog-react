@@ -1,0 +1,28 @@
+.fullPanel {
+  position: relative;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.screenPane {
+	overflow: hidden;
+	height: 100vh;
+}
+
+.panelsContainer {
+	position: relative;
+	transition: all 1s ease;
+	/* top: -100vh */
+}
+
+.panelLabel {
+  line-height: 1;
+	position: absolute;
+	right: 20px;
+	bottom: 0;
+	font-size: 8rem;
+  color: rgba(0, 0, 0, 0.2);
+  font-weight: bolder;
+  text-orientation: upright;
+}

@@ -1,0 +1,39 @@
+.banner {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  align-items: center;
+}
+
+
+
+.info span {
+  display: block;
+}
+
+.info .name {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.info .title {
+  font-size: 2rem;
+  font-weight: 100;
+}
+.info .description {
+  font-weight: 100;
+}
+
+.avi {
+}
+
+.avi img {
+  width: 400px;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  overflow: hidden;
+  border: solid 2px purple;
+}
+

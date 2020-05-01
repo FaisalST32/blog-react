@@ -1,0 +1,37 @@
+.postThumbnail {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 40px 0px;
+  align-items: center;
+
+  /* flex-basis: 1; */
+}
+
+.postImageContainer {
+  height: 200px;
+  width: 200px;
+  max-height: 25vh;
+  max-width: 25vh;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.postContent {
+  margin-left: 40px;
+  width: calc(100% - 240px);
+  max-width: calc(100% - 25vh - 40px);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.datePublished {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}

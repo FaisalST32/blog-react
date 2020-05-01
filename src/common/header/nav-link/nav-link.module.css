@@ -1,0 +1,23 @@
+.navbarLink {
+  margin: 0 15px;
+}
+
+.link {
+  transition: all 200ms ease-out;
+  display: inline-block;
+  padding: 3px;
+  background-image: linear-gradient(purple, purple);
+  background-size: 0 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+.link:hover, .link.activeLink {
+  color: purple;
+  background-size: 100% 1px;
+}
+
+.link.isTitle.isTitle {
+  font-size: 1.2rem;
+  background-image: none;
+}
