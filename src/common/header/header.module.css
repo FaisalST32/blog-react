@@ -2,7 +2,13 @@
     z-index: 100;
     position: fixed;
     width: 100%;
+    transition: all 200ms ease-out;
 }
+
+.Header.HeaderDark {
+    background-color: rgba(128, 0, 128, 0.401);
+}
+
 .NavBar {
     display: flex;
     flex-flow: row nowrap;

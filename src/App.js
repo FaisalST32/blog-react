@@ -10,6 +10,8 @@ import Admin from "./areas/Admin/admin.component";
 import WriteNew from "./areas/WriteNew/write-new.compnent";
 import Login from "./areas/Auth/Login/login.component";
 import Landing from "./areas/Landing/landing.component";
+import Libraries from "./areas/Libraries/libraries.component";
+import Posts from "./areas/posts/posts.component";
 
 const App = () => {
   return (
@@ -21,6 +23,11 @@ const App = () => {
             path="/blogs/:id"
             exact
             render={(props) => <Post {...props} />}
+          />
+          <Route
+            path="/blogs"
+            exact
+            render={(props) => <Posts {...props} />}
           />
           <Route path="/games" exact render={(props) => <Games {...props} />} />
           <Route path="/about" exact render={(props) => <About {...props} />} />
@@ -34,6 +41,11 @@ const App = () => {
             path="/sign-in"
             exact
             render={(props) => <Login {...props} />}
+          />
+          <Route
+            path="/libraries"
+            exact
+            render={(props) => <Libraries {...props} />}
           />
           <Route path="/" exact render={(props) => <Landing {...props} />} />
         </Switch>

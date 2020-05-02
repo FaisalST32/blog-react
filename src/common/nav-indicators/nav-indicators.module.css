@@ -6,14 +6,18 @@
 }
 
 .indicator {
-  font-size: 0.5rem;
+  font-size: 0.4rem;
   text-align: center;
   transition: font-size 200ms ease;
   cursor: pointer;
   color: purple
 }
 
-.indicator.active, .indicator:hover {
+.indicator.active {
   font-size: 0.8rem;
+  line-height: 1.5;
+}
+.indicator:hover:not(.active) {
+  font-size: 0.6rem;
   line-height: 1.5;
 }

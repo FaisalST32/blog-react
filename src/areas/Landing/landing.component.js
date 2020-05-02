@@ -4,6 +4,7 @@ import Posts from "../posts/posts.component";
 import classes from "./landing.module.css";
 import NavIndicators from "../../common/nav-indicators/nav-indicators.component";
 import Games from "../Games/games.component";
+import Libraries from "../Libraries/libraries.component";
 
 const Landing = () => {
 	const [viewState, setViewState] = useState({
@@ -11,7 +12,7 @@ const Landing = () => {
 		transitioning: false,
 	});
 
-	const PANELS_COUNT = 3;
+	const PANELS_COUNT = 4;
 
 	const prevSection = () => {
 		console.log("prev section");
@@ -76,12 +77,16 @@ const Landing = () => {
 					<Banner />
 				</div>
 				<div className={classes.fullPanel} style={{backgroundColor: 'azure'}}>
-					<Posts maxCount={3} />
+					<Posts maxCount={3} isLanding />
 					<div className={classes.panelLabel}>BLOGS</div>
 				</div>
 				<div className={classes.fullPanel} style={{backgroundColor: 'bisque'}}>
-					<Games maxCount={4} />
+					<Games maxCount={4} isLanding />
 					<div className={classes.panelLabel}>GAMES</div>
+				</div>
+				<div className={classes.fullPanel} style={{backgroundColor: 'lightgoldenrodyellow'}}>
+					<Libraries maxCount={2} isLanding />
+					<div className={classes.panelLabel}>LIBRARIES</div>
 				</div>
 			</div>
 			<NavIndicators count={PANELS_COUNT} activeIndex={viewState.currentPanel} setIndicator={onSetSection} />

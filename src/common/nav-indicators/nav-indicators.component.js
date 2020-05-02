@@ -9,7 +9,7 @@ const NavIndicators = ({count, activeIndex, setIndicator}) => {
       if (i === activeIndex - 1) {
         indicatorClasses.push(classes.active)
       }
-      return <div className={indicatorClasses.join(' ')} onClick={() => {setIndicator(i + 1)}}>&#11044;</div>
+      return <div key={i} className={indicatorClasses.join(' ')} onClick={() => {setIndicator(i + 1)}}>&#11044;</div>
     })
   }
   return (

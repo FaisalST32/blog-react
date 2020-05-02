@@ -1,8 +1,11 @@
 import React from 'react'
 import classes from './games.module.css';
 import GamesThumbnail from './games-thumbnail/games-thumbnail.component';
+import ReactIf from '../../common/react-if/react-if.component';
+import { withRouter } from 'react-router';
+import PageTitle from '../../common/page-title/page-title.component';
 
-const Games = ({ maxCount }) => {
+const Games = ({ maxCount, isLanding, ...props }) => {
     let games = [
         { title: 'tic-tac-toe', url: 'https://games.faisalrashid.online/tictactoe/' },
         { title: 'minesweeper', url: 'https://games.faisalrashid.online/minesweeper/' },
@@ -19,10 +22,16 @@ const Games = ({ maxCount }) => {
     });
 
     return (
-        <div className={[classes.Games, 'content-container'].join(' ')}>
-            {gamesHtml}
+        <div className="content-container">
+            <ReactIf showIf={!isLanding}>
+                <PageTitle title="Games" />
+            </ReactIf>
+            <div className={classes.Games}>{gamesHtml}</div>
+            <ReactIf showIf={isLanding}>
+                <div onClick={() => { props.history.push('/games') }} className="more-content">view all games<span role="img" aria-label="link">&nbsp;&rarr;</span></div>
+            </ReactIf>
         </div>
     )
 }
 
-export default Games
+export default withRouter(Games)

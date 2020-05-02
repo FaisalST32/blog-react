@@ -20,3 +20,21 @@
   width: 100%;
   object-fit: cover;
 }
+
+.more-content {
+  font-size: 1.4rem;
+  font-weight: lighter;
+  /* text-transform: capitalize; */
+  cursor: pointer;
+  color: purple;
+}
+
+.more-content span {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+.more-content:hover span {
+  opacity: 1;
+}
+
