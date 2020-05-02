@@ -7,6 +7,7 @@ const Header = () => {
     <div className={classes.Header}>
       <div className={classes.NavBar}>
         <NavbarLink link="/" title="Faisal Rashid" isTitle />
+        <NavbarLink link="/blogs" title="Blogs" />
         <NavbarLink link="/games" title="Games" />
         <NavbarLink link="/about" title="About Me" />
         <NavbarLink link="/sign-in" title="Login" />

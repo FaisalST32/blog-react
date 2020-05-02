@@ -31,6 +31,10 @@
   font-weight: 300;
 }
 
+.subheading {
+  font-size: 1.2rem;
+}
+
 .datePublished {
   margin: 5px 0;
   font-size: 0.8rem;

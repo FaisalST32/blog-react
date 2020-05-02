@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Banner from "./banner/banner.component";
-import Posts from "./posts/posts.component";
+import Posts from "../posts/posts.component";
 import classes from "./landing.module.css";
+import NavIndicators from "../../common/nav-indicators/nav-indicators.component";
+import Games from "../Games/games.component";
 
 const Landing = () => {
 	const [viewState, setViewState] = useState({
@@ -9,7 +11,7 @@ const Landing = () => {
 		transitioning: false,
 	});
 
-	const PANELS_COUNT = 8;
+	const PANELS_COUNT = 3;
 
 	const prevSection = () => {
 		console.log("prev section");
@@ -44,6 +46,12 @@ const Landing = () => {
 		return;
 	};
 
+	const onSetSection = sectionNumber => {
+		setViewState(prev => {
+			return {...prev, currentPanel: sectionNumber}
+		});
+	}
+
 	useEffect(() => {
 		window.removeEventListener("wheel", (e) => {
 			handleScroll(e);
@@ -71,7 +79,12 @@ const Landing = () => {
 					<Posts maxCount={3} />
 					<div className={classes.panelLabel}>BLOGS</div>
 				</div>
+				<div className={classes.fullPanel} style={{backgroundColor: 'bisque'}}>
+					<Games maxCount={4} />
+					<div className={classes.panelLabel}>GAMES</div>
+				</div>
 			</div>
+			<NavIndicators count={PANELS_COUNT} activeIndex={viewState.currentPanel} setIndicator={onSetSection} />
 		</div>
 	);
 };

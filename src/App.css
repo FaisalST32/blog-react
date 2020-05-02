@@ -11,3 +11,12 @@
   overflow: hidden;
   border: solid 2px purple;
 }
+.irregular-border.irregular-border-nocolor {
+  border-color: transparent;
+}
+
+.fitting-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

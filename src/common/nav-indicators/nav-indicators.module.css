@@ -1,0 +1,19 @@
+.navIndicators {
+  position: fixed;
+  right: 20px;
+  top: 50vh;
+  transform: translateY(-50%);
+}
+
+.indicator {
+  font-size: 0.5rem;
+  text-align: center;
+  transition: font-size 200ms ease;
+  cursor: pointer;
+  color: purple
+}
+
+.indicator.active, .indicator:hover {
+  font-size: 0.8rem;
+  line-height: 1.5;
+}

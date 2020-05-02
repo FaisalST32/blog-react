@@ -1,0 +1,44 @@
+.GamesThumbnail {
+  height: 300px;
+  width: 500px;
+  max-height: 30vh;
+  max-width: calc(50% - 60px);
+  margin: 30px;
+  position: relative;
+  cursor: pointer;
+}
+
+.imageContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.imageContainer>img {
+  transition: transform 200ms ease-out;
+}
+.imageContainer>img:hover {
+  transform: scale(1.1);
+}
+
+.overlay {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  /* position: absolute;
+  left: 10px;
+  bottom: 0; */
+  font-size: 2rem;
+  word-wrap: break-word;
+  color: #fff;
+  font-weight: lighter;
+  line-height: 1;
+}

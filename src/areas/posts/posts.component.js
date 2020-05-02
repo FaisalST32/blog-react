@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { axiosWrapper } from '../../../utility/axios';
+import { axiosWrapper } from '../../utility/axios';
 import PostThumbnail from './post-thumbnail/post-thumbnail.component';
 import classes from './posts.module.css';
 
@@ -9,7 +9,6 @@ const Posts = ({maxCount}) => {
   useEffect(() => {
     (async function() {
       const posts = await getPosts(maxCount);
-      console.log(posts)
       setPosts(posts);
     })();
   }, [])
