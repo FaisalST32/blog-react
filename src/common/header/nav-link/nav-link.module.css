@@ -1,5 +1,6 @@
 .navbarLink {
   margin: 0 15px;
+  transition: all 200ms ease-out;
 }
 
 .link {
@@ -20,4 +21,117 @@
 .link.isTitle.isTitle {
   font-size: 1.2rem;
   background-image: none;
+}
+
+
+
+.menuButton {
+  display: none;
+}
+
+@media screen and (max-width: 1000px) {
+
+  *:not(ul) {
+    margin: 0;
+    padding: 0; 
+  }
+  
+  .menuButton {
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    position: relative;
+    top: 2px;
+    margin-left: 40px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .menuButton span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: purple;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+  
+  .menuButton span:nth-child(1) {
+    top: 0px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  
+  .menuButton span:nth-child(2) {
+    top: 6px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  
+  .menuButton span:nth-child(3) {
+    top: 12px;
+    -webkit-transform-origin: left center;
+    -moz-transform-origin: left center;
+    -o-transform-origin: left center;
+    transform-origin: left center;
+  }
+  
+  .open .menuButton span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: -1px;
+    left: 3px;
+  }
+  
+  .open .menuButton span:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .open .menuButton span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    top: 13px;
+    left: 3px;
+  }
+
+  .navbarLink:not(.navTitle):not(.navOpen) {
+    height: 0;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .link.isTitle.isTitle {
+    font-size: 1.5rem;
+    background-image: none;
+  }
+
+  .navbarLink:not(.navTitle) {
+    margin: 10px 15px;
+  }
 }

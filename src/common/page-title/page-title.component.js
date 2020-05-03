@@ -1,6 +1,6 @@
 import React from 'react'
 import classes from './page-title.module.css'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 const PageTitle = ({ title, description, keywords }) => {
 

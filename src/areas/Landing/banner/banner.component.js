@@ -4,7 +4,7 @@ import avi from '../../../assets/images/avi.png';
 
 const Banner = () => {
   return (
-    <div className={classes.banner}>
+    <div className={[classes.banner, 'content-container'].join(' ')}>
       <div className={classes.info}>
         <span className={classes.name}>Faisal Rashid</span> 
         <span className={classes.title}>Software Developer at DealerSocket India</span>

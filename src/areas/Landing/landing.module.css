@@ -27,4 +27,31 @@
   text-orientation: upright;
 }
 
+@media screen and (max-width: 1000px) {
+	.fullPanel {
+		height: auto;
+		display: block;
+	}
+	
+	.screenPane {
+		overflow: auto;
+		height: auto;
+	}
+	
+	.panelsContainer {
+		position: static;
+		transition: all 1s ease;
+		/* top: -100vh */
+	}
+	
+	.panelLabel {
+		line-height: 1.5;
+		position: static;
+		font-size: 4rem;
+		display: block;
+		text-align: center;
+	}
+	
+}
+
 

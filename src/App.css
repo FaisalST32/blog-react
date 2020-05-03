@@ -62,3 +62,72 @@
   justify-content: center;
   margin: auto;
 }
+
+@media screen and (max-width: 1000px) {
+  .content-container {
+    margin: auto;
+    min-width: 90%;  
+  }
+
+  .more-content {
+    padding-bottom: 30px;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+a {
+  background-color: transparent;
+  color: inherit;
+  text-decoration: inherit;
+}
+
+img {
+  border-style: none;
+}
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}

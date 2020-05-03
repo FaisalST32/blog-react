@@ -6,3 +6,9 @@
   padding-left: -30px;
   padding-right: -30px;
 }
+
+@media screen and (max-width: 1000px) {
+  .Library {
+    flex-flow: column wrap;
+  }
+}

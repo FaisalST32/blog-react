@@ -1,12 +1,8 @@
 .banner {
-  width: 60%;
   display: flex;
   justify-content: space-around;
-  margin: auto;
   align-items: center;
 }
-
-
 
 .info span {
   display: block;
@@ -35,5 +31,29 @@
   border-top-right-radius: 15px 225px;
   overflow: hidden;
   border: solid 2px purple;
+}
+
+
+@media screen and (max-width: 1000px) {
+  .banner {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  .avi img {
+    width: 90%;
+    margin-top: 20px;
+  }
+  .avi {
+    text-align: center;
+  }
+
+  .info .title {
+    font-size: 1.5rem;
+  }
 }
 
