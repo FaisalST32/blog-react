@@ -5,6 +5,7 @@ import classes from "./landing.module.css";
 import NavIndicators from "../../common/nav-indicators/nav-indicators.component";
 import Games from "../Games/games.component";
 import Libraries from "../Libraries/libraries.component";
+import { Helmet } from 'react-helmet';
 
 const Landing = () => {
 	const [viewState, setViewState] = useState({
@@ -49,7 +50,7 @@ const Landing = () => {
 
 	const onSetSection = sectionNumber => {
 		setViewState(prev => {
-			return {...prev, currentPanel: sectionNumber}
+			return { ...prev, currentPanel: sectionNumber }
 		});
 	}
 
@@ -69,6 +70,11 @@ const Landing = () => {
 
 	return (
 		<div className={classes.screenPane}>
+			<Helmet>
+				<title>Faisal Rashid</title>
+				<meta name="description" content="Personal website of Faisal Rashid" />
+				<meta name="keywords" content="Faisal Rashid, Faisal, Blog, JavaScript, React, Software Developer, Tic-Tac-Toe" />
+			</Helmet>
 			<div
 				className={classes.panelsContainer}
 				style={{ top: `${-100 * (viewState.currentPanel - 1)}vh` }}
@@ -76,15 +82,15 @@ const Landing = () => {
 				<div className={classes.fullPanel}>
 					<Banner />
 				</div>
-				<div className={classes.fullPanel} style={{backgroundColor: 'azure'}}>
+				<div className={classes.fullPanel} style={{ backgroundColor: 'azure' }}>
 					<Posts maxCount={3} isLanding />
 					<div className={classes.panelLabel}>BLOGS</div>
 				</div>
-				<div className={classes.fullPanel} style={{backgroundColor: 'bisque'}}>
+				<div className={classes.fullPanel} style={{ backgroundColor: 'bisque' }}>
 					<Games maxCount={4} isLanding />
 					<div className={classes.panelLabel}>GAMES</div>
 				</div>
-				<div className={classes.fullPanel} style={{backgroundColor: 'lightgoldenrodyellow'}}>
+				<div className={classes.fullPanel} style={{ backgroundColor: 'lightgoldenrodyellow' }}>
 					<Libraries maxCount={2} isLanding />
 					<div className={classes.panelLabel}>LIBRARIES</div>
 				</div>

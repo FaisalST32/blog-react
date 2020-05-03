@@ -2,15 +2,27 @@ import React from "react";
 import classes from "./post-thumbnail.module.css";
 import { contentUrl } from "../../../environments/environment";
 
-const PostThumbnail = ({ post }) => {
-	const getTrimmedHtml = html => {
-		return html.replace(/<[^>]+>/g, '').split(' ').slice(0, 20).join(' ') + '...';
-	}
+const PostThumbnail = ({ post, openPost }) => {
+	const getTrimmedHtml = (html) => {
+		return (
+			html
+				.replace(/<[^>]+>/g, "")
+				.split(" ")
+				.slice(0, 20)
+				.join(" ") + "..."
+		);
+	};
 	return (
-		<article className={classes.postThumbnail}>
+		<article
+			onClick={() => {
+				openPost(post.Heading);
+			}}
+			className={[
+				classes.postThumbnail,
+				"irregular-border irregular-border-nocolor",
+			].join(" ")}>
 			<div
-				className={[classes.postImageContainer, "irregular-border"].join(" ")}
-			>
+				className={[classes.postImageContainer, "irregular-border"].join(" ")}>
 				<img
 					src={contentUrl + post.HeaderImagePath}
 					className={classes.postImage}
@@ -21,11 +33,12 @@ const PostThumbnail = ({ post }) => {
 				<h2 className={classes.heading}>{post.Heading}</h2>
 				<h3 className={classes.subheading}>{post.SubHeading}</h3>
 				<div className={classes.datePublished}>
-					<span role="img" aria-label="calendar">&#128197;</span> {new Date(post.DatePublished).toDateString()}
+					<span role="img" aria-label="calendar">
+						&#128197;
+					</span>{" "}
+					{new Date(post.DatePublished).toDateString()}
 				</div>
-				<div className={classes.postHtml}>
-					{getTrimmedHtml(post.Body)}
-				</div>
+				<div className={classes.postHtml}>{getTrimmedHtml(post.Body)}</div>
 			</div>
 		</article>
 	);

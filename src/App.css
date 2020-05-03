@@ -1,6 +1,24 @@
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 0, 128, 0.671);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: purple;
+}
+
 .content-container {
   width: 50%;
   margin: auto;
+  min-width: 800px;
 }
 
 .irregular-border {
@@ -38,3 +56,9 @@
   opacity: 1;
 }
 
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}

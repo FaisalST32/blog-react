@@ -31,9 +31,9 @@ const Header = () => {
         <NavbarLink link="/games" title="Games" />
         <NavbarLink link="/libraries" title="Libraries" />
         <NavbarLink link="/about" title="About Me" />
-        <NavbarLink link="/sign-in" title="Login" />
+        {/* <NavbarLink link="/sign-in" title="Login" />
         <NavbarLink link="/write-new" title="Write New" />
-        <NavbarLink link="/admin" title="Admin" />
+        <NavbarLink link="/admin" title="Admin" /> */}
       </div>
     </div>
   );

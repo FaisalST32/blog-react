@@ -1,8 +1,23 @@
 .postThumbnail {
   display: flex;
   flex-flow: row wrap;
-  margin: 40px 0px;
+  padding: 10px 20px;
+  box-sizing: border-box;
   align-items: center;
+  transition: all 200ms ease-out;
+  cursor: pointer;
+}
+
+.postThumbnail:first-child {
+  margin-top: 60px;
+}
+
+.postThumbnail:last-child {
+  margin-bottom: 40px;
+}
+
+.postThumbnail:hover {
+  background-color: rgba(128, 0, 128, 0.205);
 }
 
 .postImageContainer {
