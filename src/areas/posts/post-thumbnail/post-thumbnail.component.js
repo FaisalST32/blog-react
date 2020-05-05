@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./post-thumbnail.module.css";
 import { contentUrl } from "../../../environments/environment";
+import Img from "../../../common/img/img.component";
 
 const PostThumbnail = ({ post, openPost }) => {
 	const getTrimmedHtml = (html) => {
@@ -23,7 +24,7 @@ const PostThumbnail = ({ post, openPost }) => {
 			].join(" ")}>
 			<div
 				className={[classes.postImageContainer, "irregular-border"].join(" ")}>
-				<img
+				<Img
 					src={contentUrl + post.HeaderImagePath}
 					className={classes.postImage}
 					alt={post.Heading}

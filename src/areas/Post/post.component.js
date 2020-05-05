@@ -5,6 +5,7 @@ import classes from "./post.module.css";
 import { Helmet } from 'react-helmet-async';
 import { contentUrl, siteUrl } from "../../environments/environment";
 import Loader from "../../common/loader/loader.component";
+import Img from "../../common/img/img.component";
 
 const Post = (props) => {
   const getBlogContent = async (blogUrl) => {
@@ -24,8 +25,9 @@ const Post = (props) => {
       if (blogContentResp) {
         setBlogContent(blogContentResp);
       }
+      window.scrollTo(0,0)
     })();
-  });
+  }, [props.match.params.id]);
 
   return (
     <div className="content-container">
@@ -65,7 +67,7 @@ const Post = (props) => {
               </span>
             </div>
           </div>
-          <img
+          <Img
             className={classes.headerImage}
             src={contentUrl + blogContent?.HeaderImagePath}
             alt={blogContent?.Heading}

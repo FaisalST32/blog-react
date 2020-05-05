@@ -5,7 +5,7 @@ import classes from "./landing.module.css";
 import NavIndicators from "../../common/nav-indicators/nav-indicators.component";
 import Games from "../Games/games.component";
 import Libraries from "../Libraries/libraries.component";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 
 const Landing = () => {
   const [viewState, setViewState] = useState({
@@ -16,11 +16,9 @@ const Landing = () => {
   const PANELS_COUNT = 4;
 
   const prevSection = () => {
-    console.log("prev section");
     setViewState((prev) => {
       if (prev.currentPanel <= 1 || prev.transitioning) return prev;
       setTimeout(() => {
-        console.log("restoring view state");
         setViewState((prev) => ({ ...prev, transitioning: false }));
       }, 1000);
       return { transitioning: true, currentPanel: prev.currentPanel - 1 };
@@ -28,11 +26,9 @@ const Landing = () => {
   };
 
   const nextSection = () => {
-    console.log("next section");
     setViewState((prev) => {
       if (prev.currentPanel >= PANELS_COUNT || prev.transitioning) return prev;
       setTimeout(() => {
-        console.log("restoring view state");
         setViewState((prev) => ({ ...prev, transitioning: false }));
       }, 1000);
       return { transitioning: true, currentPanel: prev.currentPanel + 1 };
@@ -40,9 +36,9 @@ const Landing = () => {
   };
 
   const handleScroll = (e) => {
-    if (e.deltaY > 0 && viewState.currentPanel < PANELS_COUNT) {
+    if (e.deltaY > 40 && viewState.currentPanel < PANELS_COUNT) {
       nextSection();
-    } else if (e.deltaY < 0 && viewState.currentPanel > 0) {
+    } else if (e.deltaY < -40 && viewState.currentPanel > 0) {
       prevSection();
     }
     return;

@@ -26,7 +26,7 @@ const Header = () => {
       },
       { passive: true }
     );
-  });
+  }, []);
 
   const headerClasses = [classes.Header];
 
@@ -51,7 +51,7 @@ const Header = () => {
         <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/blogs" title="Blogs" />
         <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/games" title="Games" />
         <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/libraries" title="Libraries" />
-        <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/about" title="About Me" />
+        {/* <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/about" title="About Me" /> */}
         {/* <NavbarLink link="/sign-in" title="Login" />
         <NavbarLink link="/write-new" title="Write New" />
         <NavbarLink link="/admin" title="Admin" /> */}

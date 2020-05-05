@@ -18,11 +18,10 @@ const Posts = ({ maxCount, isLanding, ...props }) => {
       setPosts(posts);
       setLoading(false);
     })();
-  }, []);
+  }, [maxCount]);
 
   const getPosts = async (count) => {
     const resp = await axiosWrapper.get("blog");
-    console.log(resp);
     if (!resp?.data) {
       return;
     }

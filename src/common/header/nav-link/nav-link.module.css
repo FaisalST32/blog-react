@@ -97,7 +97,7 @@
     transform-origin: left center;
   }
   
-  .open .menuButton span:nth-child(1) {
+  .navOpen .menuButton span:nth-child(1) {
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -o-transform: rotate(45deg);
@@ -106,12 +106,12 @@
     left: 3px;
   }
   
-  .open .menuButton span:nth-child(2) {
+  .navOpen .menuButton span:nth-child(2) {
     width: 0%;
     opacity: 0;
   }
   
-  .open .menuButton span:nth-child(3) {
+  .navOpen .menuButton span:nth-child(3) {
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);

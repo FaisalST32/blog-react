@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.info {
+  margin-right: 20px;
+}
+
 .info span {
   display: block;
 }
@@ -18,9 +22,6 @@
 }
 .info .description {
   font-weight: 100;
-}
-
-.avi {
 }
 
 .avi img {
@@ -40,7 +41,7 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    padding-top: 60px;
+    padding-top: 0;
     height: 100vh;
     box-sizing: border-box;
   }
@@ -54,6 +55,10 @@
 
   .info .title {
     font-size: 1.5rem;
+  }
+
+  .info {
+    margin-right: 0;
   }
 }
 

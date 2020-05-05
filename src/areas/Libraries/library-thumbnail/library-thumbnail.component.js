@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './library-thumbnail.module.css';
+import Img from '../../../common/img/img.component';
 
 const LibraryThumbnail = ({ library: { url, title, description } }) => {
   const openUrl = linkUrl => {
@@ -8,7 +9,7 @@ const LibraryThumbnail = ({ library: { url, title, description } }) => {
   return (
     <div onClick={() => { openUrl(url) }} className={classes.LibraryThumbnail}>
       <div className={[classes.imageContainer, 'irregular-border'].join(' ')}>
-        <img className="fitting-image" src={require(`../../../assets/images/${title}.png`)} alt={title} />
+        <Img className="fitting-image" src={require(`../../../assets/images/${title}.png`)} alt={title} />
         <div className={classes.imageOverlay}>
           <img src={require('../../../assets/images/github.svg')} alt="github" />
           <span>View on GitHub</span>
