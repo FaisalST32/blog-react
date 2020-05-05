@@ -3,7 +3,6 @@ import { axiosWrapper } from "../../utility/axios";
 import ReactIf from "../../common/react-if/react-if.component";
 import classes from "./post.module.css";
 import { Helmet } from 'react-helmet-async';
-import { contentUrl, siteUrl } from "../../environments/environment";
 import Loader from "../../common/loader/loader.component";
 import Img from "../../common/img/img.component";
 
@@ -39,11 +38,11 @@ const Post = (props) => {
             <meta property="og:title" content={blogContent?.Heading} />
             <meta
               property="og:image"
-              content={contentUrl + blogContent?.HeaderImagePath}
+              content={process.env.REACT_APP_CONTENT_URL + blogContent?.HeaderImagePath}
             />
 
             <meta property="og:description" content={blogContent?.SubHeading} />
-            <meta property="og:url" content={siteUrl + props.match.params.id} />
+            <meta property="og:url" content={process.env.REACT_APP_SITE_URL + props.match.params.id} />
             <meta name="twitter:card" content="summary_large_image" />
             <meta name="twitter:site" content="@faisalst32"></meta>
           </Helmet>
@@ -69,7 +68,7 @@ const Post = (props) => {
           </div>
           <Img
             className={classes.headerImage}
-            src={contentUrl + blogContent?.HeaderImagePath}
+            src={process.env.REACT_APP_CONTENT_URL + blogContent?.HeaderImagePath}
             alt={blogContent?.Heading}
           />
           <div
