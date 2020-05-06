@@ -5,6 +5,8 @@ import ReactIf from '../../common/react-if/react-if.component';
 import { withRouter } from 'react-router';
 import PageTitle from '../../common/page-title/page-title.component';
 
+console.log('hello')
+
 const Libraries = ({ maxCount, isLanding, ...props }) => {
   const librariesArr = [
     { title: 'fs-lightbox', url: 'https://github.com/FaisalST32/fs-lightbox', description: 'A simple lightbox for your image gallery' },

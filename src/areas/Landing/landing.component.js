@@ -1,71 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Banner from "./banner/banner.component";
 import Posts from "../posts/posts.component";
 import classes from "./landing.module.css";
-import NavIndicators from "../../common/nav-indicators/nav-indicators.component";
 import Games from "../Games/games.component";
 import Libraries from "../Libraries/libraries.component";
 import { Helmet } from "react-helmet-async";
+import {
+  FullPageContainer,
+  FullPagePanel,
+} from 'fullpage-react-fs';
+import 'fullpage-react-fs/dist/index.css';
 
 const Landing = () => {
-  const [viewState, setViewState] = useState({
-    currentPanel: 1,
-    transitioning: false,
-  });
-
-  const PANELS_COUNT = 4;
-
-  const prevSection = () => {
-    setViewState((prev) => {
-      if (prev.currentPanel <= 1 || prev.transitioning) return prev;
-      setTimeout(() => {
-        setViewState((prev) => ({ ...prev, transitioning: false }));
-      }, 1000);
-      return { transitioning: true, currentPanel: prev.currentPanel - 1 };
-    });
-  };
-
-  const nextSection = () => {
-    setViewState((prev) => {
-      if (prev.currentPanel >= PANELS_COUNT || prev.transitioning) return prev;
-      setTimeout(() => {
-        setViewState((prev) => ({ ...prev, transitioning: false }));
-      }, 1000);
-      return { transitioning: true, currentPanel: prev.currentPanel + 1 };
-    });
-  };
-
-  const handleScroll = (e) => {
-    if (e.deltaY > 40 && viewState.currentPanel < PANELS_COUNT) {
-      nextSection();
-    } else if (e.deltaY < -40 && viewState.currentPanel > 0) {
-      prevSection();
-    }
-    return;
-  };
-
-  const onSetSection = (sectionNumber) => {
-    setViewState((prev) => {
-      return { ...prev, currentPanel: sectionNumber };
-    });
-  };
-
-  useEffect(() => {
-    window.removeEventListener("wheel", (e) => {
-      handleScroll(e);
-    });
-    window.addEventListener("wheel", (e) => {
-      handleScroll(e);
-    });
-    return () => {
-      window.removeEventListener("wheel", (e) => {
-        handleScroll(e);
-      });
-    };
-  }, []);
-
   return (
-    <div className={classes.screenPane}>
+    <React.Fragment>
       <Helmet>
         <title>Faisal Rashid</title>
         <meta name="description" content="Personal website of Faisal Rashid" />
@@ -74,35 +22,24 @@ const Landing = () => {
           content="Faisal Rashid, Faisal, Blog, JavaScript, React, Software Developer, Tic-Tac-Toe"
         />
       </Helmet>
-      <div
-        className={classes.panelsContainer}
-        style={{ top: `${-100 * (viewState.currentPanel - 1)}vh` }}>
-        <div className={classes.fullPanel}>
+      <FullPageContainer showIndicators={true}>
+        <FullPagePanel>
           <Banner />
-        </div>
-        <div className={classes.fullPanel} style={{ backgroundColor: "azure" }}>
+        </FullPagePanel>
+        <FullPagePanel bgColor="azure">
           <div className={classes.panelLabel}>BLOGS</div>
           <Posts maxCount={3} isLanding />
-        </div>
-        <div
-          className={classes.fullPanel}
-          style={{ backgroundColor: "bisque" }}>
+        </FullPagePanel>
+        <FullPagePanel bgColor="bisque">
           <div className={classes.panelLabel}>GAMES</div>
           <Games maxCount={4} isLanding />
-        </div>
-        <div
-          className={classes.fullPanel}
-          style={{ backgroundColor: "lightgoldenrodyellow" }}>
+        </FullPagePanel>
+        <FullPagePanel bgColor="lightgoldenrodyellow">
           <div className={classes.panelLabel}>LIBRARIES</div>
           <Libraries maxCount={2} isLanding />
-        </div>
-      </div>
-      <NavIndicators
-        count={PANELS_COUNT}
-        activeIndex={viewState.currentPanel}
-        setIndicator={onSetSection}
-      />
-    </div>
+        </FullPagePanel>
+      </FullPageContainer>
+    </React.Fragment>
   );
 };
 
