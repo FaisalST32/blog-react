@@ -134,4 +134,16 @@
   .navbarLink:not(.navTitle) {
     margin: 10px 15px;
   }
+
+  @media screen and (max-width: 1000px) {
+    .link:hover {
+      color: black;
+      background-size: 0 1px;
+    }
+
+    .link:active {
+      color: purple;
+      background-size: 100% 1px;
+    }
+  }
 }

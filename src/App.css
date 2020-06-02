@@ -72,6 +72,10 @@
   .more-content {
     padding-bottom: 30px;
   }
+
+  .more-content span {
+    opacity: 1;
+  }
 }
 
 html {

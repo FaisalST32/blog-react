@@ -4,13 +4,9 @@ import ReactIf from "../react-if/react-if.component";
 const Img = ({ src, className, alt, imageDidLoad }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  let style = {
-    display: "none",
-    transition: "all 200ms ease-out 200ms",
-    opacity: "0",
-  };
+  let style = { display: "none" };
   if (imageLoaded) {
-    style = { transition: "opacity 2000ms ease-out 200ms", opacity: "1" };
+    style = {};
   }
 
   const onLoadImage = () => {

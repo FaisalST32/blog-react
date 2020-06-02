@@ -59,4 +59,11 @@
     cursor: pointer;
     margin: 30px 0; 
   }
+
+  .imageContainer:hover .imageOverlay {
+    left: 100%;
+  }
+  .imageContainer:active .imageOverlay {
+    left: 0;
+  }
 }

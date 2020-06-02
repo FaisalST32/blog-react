@@ -34,6 +34,43 @@
   border: solid 2px purple;
 }
 
+.socialLinks img {
+  height: 20px;
+  vertical-align: middle;
+  transition: all 200ms ease-out;
+}
+
+.socialLinks .link:hover img{
+  transform: scale(1.1, 1.1)
+}
+.socialLinks ul{
+  list-style-type: none;
+  padding-left: 0;
+}
+.socialLinks ul>li{
+  display: inline-block;
+}
+
+.socialLinks ul li{
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+
+.socialLinks li a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.socialLinks {
+  display: block;
+  
+}
+
+.socialLinks .username {
+  display: none;
+}
+
 
 @media screen and (max-width: 1000px) {
   .banner {
