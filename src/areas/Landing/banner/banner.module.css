@@ -12,6 +12,11 @@
   display: block;
 }
 
+.info .greeting {
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 2.5rem;
+}
 .info .name {
   font-size: 3rem;
   font-weight: 900;
@@ -53,8 +58,13 @@
     text-align: center;
   }
 
-  .info .title {
+  .info .title, .greeting {
     font-size: 1.5rem;
+  }
+
+  .greeting {
+    line-height: 1.2rem;
+
   }
 
   .info {

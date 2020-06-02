@@ -6,6 +6,7 @@ const Banner = () => {
   return (
     <div className={[classes.banner, 'content-container'].join(' ')}>
       <div className={classes.info}>
+        <span className={classes.greeting}>Hi, I'm</span>
         <span className={classes.name}>Faisal Rashid</span> 
         <span className={classes.title}>Software Developer at DealerSocket India</span>
         <span className={classes.description}>Full-Stack Web Development | App Development</span>  
