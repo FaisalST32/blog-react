@@ -79,4 +79,12 @@
     width: 100%;
     max-width: 100%;
   }
+
+  .postThumbnail:hover {
+    background-color: transparent;
+  }
+
+  .postThumbnail:active {
+    background-color: rgba(128, 0, 128, 0.205);
+  }
 }

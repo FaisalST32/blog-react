@@ -5,11 +5,15 @@ import classes from "./landing.module.css";
 import Games from "../Games/games.component";
 import Libraries from "../Libraries/libraries.component";
 import { Helmet } from "react-helmet-async";
+// import {
+//   FullPageContainer,
+//   FullPagePanel,
+// } from 'fullpage-react-fs';
+// import 'fullpage-react-fs/dist/index.css';
 import {
   FullPageContainer,
   FullPagePanel,
-} from 'fullpage-react-fs';
-import 'fullpage-react-fs/dist/index.css';
+} from '../../common/fullpage/fullpage';
 
 const Landing = () => {
   return (

@@ -47,4 +47,11 @@
     max-height: 100%;
     max-width: 100%;
   }
+
+  .imageContainer>img:active {
+    transform: scale(1.1);
+  }
+  .imageContainer>img:hover {
+    transform: scale(1);
+  }
 }
