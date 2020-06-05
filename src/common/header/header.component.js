@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import NavbarLink from "./nav-link/nav-link.component";
-import classes from "./header.module.css";
+import React, { useEffect, useState, useContext } from 'react';
+import NavbarLink from './nav-link/nav-link.component';
+import classes from './header.module.css';
+import { ThemeContext } from '../../App';
 
-const Header = () => {
+const Header = (props) => {
   const [windowIsScrolled, setWindowIsScrolled] = useState(false);
 
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -13,20 +14,27 @@ const Header = () => {
   };
 
   const onToggleMenu = () => {
-    setMenuOpen(curr => {
+    setMenuOpen((curr) => {
       return !curr;
-    })
+    });
   };
 
   useEffect(() => {
     window.addEventListener(
-      "scroll",
+      'scroll',
       () => {
         handleScroll();
       },
       { passive: true }
     );
   }, []);
+
+  const theme = useContext(ThemeContext);
+
+  const buttonTheme = [classes.changeThemeButton];
+  if (theme.scheme === 'dark') {
+    buttonTheme.push(classes.dark)
+  } 
 
   const headerClasses = [classes.Header];
 
@@ -39,7 +47,13 @@ const Header = () => {
   }
 
   return (
-    <div className={headerClasses.join(" ")}>
+    <div
+      className={headerClasses.join(' ')}
+      style={
+        theme.scheme === 'dark'
+          ? { backgroundColor: theme.backgroundFaded }
+          : {}
+      }>
       <div className={classes.NavBar}>
         <NavbarLink
           link="/"
@@ -48,13 +62,33 @@ const Header = () => {
           isMenuOpen={isMenuOpen}
           toggleMenu={onToggleMenu}
         />
-        <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/blogs" title="Blogs" />
-        <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/games" title="Games" />
-        <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/libraries" title="Libraries" />
+        <NavbarLink
+          toggleMenu={onToggleMenu}
+          isMenuOpen={isMenuOpen}
+          link="/blogs"
+          title="Blogs"
+        />
+        <NavbarLink
+          toggleMenu={onToggleMenu}
+          isMenuOpen={isMenuOpen}
+          link="/games"
+          title="Games"
+        />
+        <NavbarLink
+          toggleMenu={onToggleMenu}
+          isMenuOpen={isMenuOpen}
+          link="/libraries"
+          title="Libraries"
+        />
         {/* <NavbarLink toggleMenu={onToggleMenu} isMenuOpen={isMenuOpen} link="/about" title="About Me" /> */}
         {/* <NavbarLink link="/sign-in" title="Login" />
         <NavbarLink link="/write-new" title="Write New" />
         <NavbarLink link="/admin" title="Admin" /> */}
+      </div>
+      <div className={buttonTheme.join(' ')} onClick={props.changeTheme}>
+        <div className={classes.outerCircle}>
+          <div className={classes.innerCircle}></div>
+        </div>
       </div>
     </div>
   );

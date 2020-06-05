@@ -9,7 +9,7 @@ const LibraryThumbnail = ({ library: { url, title, description } }) => {
   return (
     <div onClick={() => { openUrl(url) }} className={classes.LibraryThumbnail}>
       <div className={[classes.imageContainer, 'irregular-border'].join(' ')}>
-        <Img className="fitting-image" src={require(`../../../assets/images/${title}.png`)} alt={title} />
+        <Img className="fitting-image" src={require(`../../../assets/images/${title}.gif`)} alt={title} />
         <div className={classes.imageOverlay}>
           <img src={require('../../../assets/images/github.svg')} alt="github" />
           <span>View on GitHub</span>

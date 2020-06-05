@@ -8,8 +8,9 @@ import PageTitle from '../../common/page-title/page-title.component';
 const Libraries = ({ maxCount, isLanding, ...props }) => {
   const librariesArr = [
     { title: 'fs-lightbox', url: 'https://github.com/FaisalST32/fs-lightbox', description: 'A simple lightbox for your image gallery' },
+    { title: 'fullpage-react-fs', url: 'https://github.com/FaisalST32/fullpage-react-fs', description: 'A lightweight react library to create fullpage websites' },
     { title: 'fs-toast', url: 'https://github.com/FaisalST32/fs-toast', description: 'A simple no-dependency JavaScript library for showing toast notifications' },
-    { title: 'fs-scrollanimate', url: 'https://github.com/FaisalST32/fs-scrollanimate', description: 'A lightweight JavaScript library to animate elements on scroll' }
+    { title: 'fs-scrollanimate', url: 'https://github.com/FaisalST32/fs-scrollanimate', description: 'A lightweight JavaScript library to animate elements on scroll' },
   ]
 
   maxCount = maxCount ? maxCount : librariesArr.length;

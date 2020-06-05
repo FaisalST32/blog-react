@@ -1,7 +1,6 @@
 .Post {
   box-sizing: border-box;
   padding-top: 80px;
-  height: 100vh;
 }
 
 .heading {
@@ -48,7 +47,7 @@
 }
  
 .body p {
-  margin: 20px 0;
+  padding: 20px 0;
 
 }
 

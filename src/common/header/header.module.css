@@ -19,6 +19,54 @@
   box-sizing: border-box;
 }
 
+.changeThemeButton {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  cursor: pointer;
+}
+
+.outerCircle {
+  border: solid 0.5px black;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  overflow: hidden;
+  box-sizing: border-box;
+
+  position: relative;
+}
+
+.innerCircle {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  bottom: -2px;
+  right: 5px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.dark .outerCircle {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: solid 1px yellow;
+  overflow: visible;
+  box-sizing: border-box;
+
+}
+
+.dark .innerCircle {
+  width: 14px;
+  height: 14px;
+  background-color: yellow;
+
+  bottom: 2px;
+  right: 2px;
+}
+
 @media screen and (max-width: 1000px) {
   .NavBar {
     display: flex;
@@ -33,5 +81,9 @@
   .Header.open {
     background-color: white;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .changeThemeButton {
+    top: 22px;
   }
 }

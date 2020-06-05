@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import ReactIf from "../react-if/react-if.component";
+import React, { useState } from 'react';
+import ReactIf from '../react-if/react-if.component';
 
 const Img = ({ src, className, alt, imageDidLoad }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  let style = { display: "none" };
+  let style = { display: 'none' };
   if (imageLoaded) {
     style = {};
   }
@@ -26,7 +26,9 @@ const Img = ({ src, className, alt, imageDidLoad }) => {
         style={style}
       />
       <ReactIf showIf={!imageLoaded}>
-        <img src={require("./loading.png")} alt={alt} className={className} />
+        {imageLoaded && (
+          <img src={require('./loading.png')} alt={alt} className={className} />
+        )}
       </ReactIf>
     </React.Fragment>
   );

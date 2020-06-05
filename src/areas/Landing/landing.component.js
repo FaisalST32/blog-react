@@ -1,10 +1,10 @@
-import React from "react";
-import Banner from "./banner/banner.component";
-import Posts from "../posts/posts.component";
-import classes from "./landing.module.css";
-import Games from "../Games/games.component";
-import Libraries from "../Libraries/libraries.component";
-import { Helmet } from "react-helmet-async";
+import React, { useContext } from 'react';
+import Banner from './banner/banner.component';
+import Posts from '../posts/posts.component';
+import classes from './landing.module.css';
+import Games from '../Games/games.component';
+import Libraries from '../Libraries/libraries.component';
+import { Helmet } from 'react-helmet-async';
 // import {
 //   FullPageContainer,
 //   FullPagePanel,
@@ -14,8 +14,11 @@ import {
   FullPageContainer,
   FullPagePanel,
 } from '../../common/fullpage/fullpage';
+import { ThemeContext } from '../../App';
 
 const Landing = () => {
+  const theme = useContext(ThemeContext);
+  const isDarkTheme = theme.scheme === 'dark';
   return (
     <React.Fragment>
       <Helmet>
@@ -30,16 +33,31 @@ const Landing = () => {
         <FullPagePanel>
           <Banner />
         </FullPagePanel>
-        <FullPagePanel bgColor="azure">
-          <div className={classes.panelLabel}>BLOGS</div>
+        <FullPagePanel bgColor={isDarkTheme ? theme.backgroundFaded : 'azure'}>
+          <div
+            style={isDarkTheme ? { color: theme.foreground } : {}}
+            className={classes.panelLabel}>
+            BLOGS
+          </div>
           <Posts maxCount={3} isLanding />
         </FullPagePanel>
-        <FullPagePanel bgColor="bisque">
-          <div className={classes.panelLabel}>GAMES</div>
+        <FullPagePanel bgColor={isDarkTheme ? theme.background : 'bisque'}>
+          <div
+            style={isDarkTheme ? { color: theme.foreground } : {}}
+            className={classes.panelLabel}>
+            GAMES
+          </div>
           <Games maxCount={4} isLanding />
         </FullPagePanel>
-        <FullPagePanel bgColor="lightgoldenrodyellow">
-          <div className={classes.panelLabel}>LIBRARIES</div>
+        <FullPagePanel
+          bgColor={
+            isDarkTheme ? theme.backgroundFaded : 'lightgoldenrodyellow'
+          }>
+          <div
+            style={isDarkTheme ? { color: theme.foreground } : {}}
+            className={classes.panelLabel}>
+            LIBRARIES
+          </div>
           <Libraries maxCount={2} isLanding />
         </FullPagePanel>
       </FullPageContainer>

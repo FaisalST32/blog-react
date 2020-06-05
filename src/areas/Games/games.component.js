@@ -7,9 +7,9 @@ import PageTitle from '../../common/page-title/page-title.component';
 
 const Games = ({ maxCount, isLanding, ...props }) => {
     let games = [
-        { title: 'tic-tac-toe', url: 'https://games.faisalrashid.online/tictactoe/' },
-        { title: 'minesweeper', url: 'https://games.faisalrashid.online/minesweeper/' },
-        { title: 'carrom-tac-toe', url: 'https://games.faisalrashid.online/carrom-tac-toe/' },
+        { title: 'tic-tac-toe', url: 'https://games.' + process.env.REACT_APP_PRIMARY_DOMAIN + '/tictactoe/' },
+        { title: 'minesweeper', url: 'https://games.' + process.env.REACT_APP_PRIMARY_DOMAIN + '/minesweeper/' },
+        { title: 'carrom-tac-toe', url: 'https://games.' + process.env.REACT_APP_PRIMARY_DOMAIN + '/carrom-tac-toe/' },
         { title: 'quizzo', url: 'https://www.quizzo.xyz/' }
     ];
 

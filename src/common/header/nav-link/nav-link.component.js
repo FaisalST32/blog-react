@@ -1,7 +1,9 @@
-import React from "react";
-import classes from "./nav-link.module.css";
-import { NavLink } from "react-router-dom";
-import ReactIf from "../../react-if/react-if.component";
+import React from 'react';
+import classes from './nav-link.module.css';
+import { NavLink } from 'react-router-dom';
+import ReactIf from '../../react-if/react-if.component';
+import { useContext } from 'react';
+import { ThemeContext } from '../../../App';
 
 const NavbarLink = ({ link, isTitle, title, isMenuOpen, toggleMenu }) => {
   let linkClasses = [classes.link];
@@ -24,11 +26,14 @@ const NavbarLink = ({ link, isTitle, title, isMenuOpen, toggleMenu }) => {
     toggleMenu();
   };
 
+  const theme = useContext(ThemeContext);
+
   return (
-    <div className={navClasses.join(" ")}>
+    <div className={navClasses.join(' ')}>
       <NavLink
         onClick={tryCloseMenu}
-        className={linkClasses.join(" ")}
+        className={linkClasses.join(' ')}
+        style={theme.scheme === 'dark' ? { color: theme.foreground } : {}}
         activeClassName={classes.activeLink}
         to={link}
         exact>
@@ -36,9 +41,18 @@ const NavbarLink = ({ link, isTitle, title, isMenuOpen, toggleMenu }) => {
       </NavLink>
       <ReactIf showIf={isTitle}>
         <div onClick={toggleMenu} className={classes.menuButton}>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span
+            style={
+              theme.scheme === 'dark' ? { background: theme.foreground } : {}
+            }></span>
+          <span
+            style={
+              theme.scheme === 'dark' ? { background: theme.foreground } : {}
+            }></span>
+          <span
+            style={
+              theme.scheme === 'dark' ? { background: theme.foreground } : {}
+            }></span>
         </div>
       </ReactIf>
     </div>
