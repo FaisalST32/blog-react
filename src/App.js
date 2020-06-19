@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './common/header/header.component';
@@ -33,10 +33,12 @@ export const ThemeContext = React.createContext();
 
 const App = () => {
   const [theme, setTheme] = useState(themes.light);
+  const themeFetched = useRef(false);
 
-  const onChangeTheme = (isDark = false) => {
+  const onChangeTheme = (isDark) => {
+    themeFetched.current = true;
     setTheme((prev) => {
-      if (prev.scheme === 'light' || isDark) {
+      if (isDark) {
         return themes.dark;
       }      
       return themes.light;
@@ -44,18 +46,22 @@ const App = () => {
   };
 
   useEffect(() => {
-    window.localStorage.setItem('theme', theme.scheme);
+    if (themeFetched.current) {
+      window.localStorage.setItem('theme', theme.scheme);
+    }
     document.body.style.background = theme.background;
   }, [theme]);
 
   useEffect(() => {    
     const savedTheme = window.localStorage.getItem('theme');
     if (savedTheme) {
+      console.log(savedTheme)
       if (savedTheme === themes.dark.scheme) {
         onChangeTheme(true);
       } else if (savedTheme === themes.light.scheme) {
         onChangeTheme(false);
       }
+      themeFetched.current = true;
     }
   }, []);
 

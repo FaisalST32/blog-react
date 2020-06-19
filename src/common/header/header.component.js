@@ -95,7 +95,7 @@ const Header = (props) => {
       <div
         className={buttonTheme.join(' ')}
         onClick={() => {
-          props.changeTheme();
+          props.changeTheme(theme.scheme !== 'dark');
         }}>
         <div className={classes.outerCircle}>
           <div className={classes.innerCircle}></div>
