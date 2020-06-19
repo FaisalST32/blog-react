@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Header from './common/header/header.component';
@@ -34,16 +34,31 @@ export const ThemeContext = React.createContext();
 const App = () => {
   const [theme, setTheme] = useState(themes.light);
 
-  const onChangeTheme = () => {
-    console.log('changing theme');
-    
+  const onChangeTheme = (isDark = false) => {
     setTheme((prev) => {
-      if (prev.scheme === 'light') {
+      if (prev.scheme === 'light' || isDark) {
         return themes.dark;
-      }
+      }      
       return themes.light;
     });
   };
+
+  useEffect(() => {
+    window.localStorage.setItem('theme', theme.scheme);
+    document.body.style.background = theme.background;
+  }, [theme]);
+
+  useEffect(() => {    
+    const savedTheme = window.localStorage.getItem('theme');
+    if (savedTheme) {
+      if (savedTheme === themes.dark.scheme) {
+        onChangeTheme(true);
+      } else if (savedTheme === themes.light.scheme) {
+        onChangeTheme(false);
+      }
+    }
+  }, []);
+
   return (
     <BrowserRouter>
       <HelmetProvider>

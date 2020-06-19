@@ -2,8 +2,15 @@ import React, { useEffect, useState, useContext } from 'react';
 import NavbarLink from './nav-link/nav-link.component';
 import classes from './header.module.css';
 import { ThemeContext } from '../../App';
+import { useHistory } from 'react-router';
+import { logPageView } from '../../ga-tracking';
 
 const Header = (props) => {
+  const history = useHistory();
+  useEffect(() => {
+    logPageView(history);
+  }, [history]);
+
   const [windowIsScrolled, setWindowIsScrolled] = useState(false);
 
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -33,8 +40,8 @@ const Header = (props) => {
 
   const buttonTheme = [classes.changeThemeButton];
   if (theme.scheme === 'dark') {
-    buttonTheme.push(classes.dark)
-  } 
+    buttonTheme.push(classes.dark);
+  }
 
   const headerClasses = [classes.Header];
 
@@ -85,7 +92,11 @@ const Header = (props) => {
         <NavbarLink link="/write-new" title="Write New" />
         <NavbarLink link="/admin" title="Admin" /> */}
       </div>
-      <div className={buttonTheme.join(' ')} onClick={props.changeTheme}>
+      <div
+        className={buttonTheme.join(' ')}
+        onClick={() => {
+          props.changeTheme();
+        }}>
         <div className={classes.outerCircle}>
           <div className={classes.innerCircle}></div>
         </div>

@@ -1,20 +1,22 @@
-
-import ReactGA from "react-ga";
-import { createBrowserHistory } from "history";
+import ReactGA from 'react-ga';
 
 export const initTracking = () => {
-  if (process.env.NODE_ENV === "production") {
-    const history = createBrowserHistory();
-  
+  if (process.env.NODE_ENV === 'production') {
+    console.log('loading');
     ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_CODE);
     ReactGA.set({
-      page: "/",
+      page: '/',
     });
-  
+    ReactGA.pageview('/');
+  }
+};
+
+export const logPageView = (history) => {
+  if (process.env.NODE_ENV === 'production') {
     history.listen((location) => {
-      ReactGA.set({ page: location.pathname });
-      ReactGA.pageview(location.pathname);
+      const page = location.pathname || window.location.pathname;
+      ReactGA.set({ page: page });
+      ReactGA.pageview(page);
     });
   }
-}
-
+};
