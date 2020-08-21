@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import ReactIf from '../react-if/react-if.component';
+import classes from './img.module.css';
 
 const Img = ({ src, className, alt, imageDidLoad }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
-  let style = { display: 'none' };
+  let imgClasses = [classes.imgHidden, className]
   if (imageLoaded) {
-    style = {};
+    imgClasses.shift();
+    imgClasses.unshift(classes.imgShown);
   }
 
   const onLoadImage = () => {
@@ -21,15 +22,12 @@ const Img = ({ src, className, alt, imageDidLoad }) => {
       <img
         src={src}
         alt={alt}
-        className={className}
+        className={imgClasses.join(' ')}
         onLoad={onLoadImage}
-        style={style}
       />
-      <ReactIf showIf={!imageLoaded}>
-        {imageLoaded && (
-          <img src={require('./loading.png')} alt={alt} className={className} />
-        )}
-      </ReactIf>
+      {(!imageLoaded &&
+        <img src={require('./loading.png')} alt={alt} className={className} />
+      )}
     </React.Fragment>
   );
 };

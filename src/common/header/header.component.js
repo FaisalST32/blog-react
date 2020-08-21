@@ -97,9 +97,17 @@ const Header = (props) => {
         onClick={() => {
           props.changeTheme(theme.scheme !== 'dark');
         }}>
-        <div className={classes.outerCircle}>
+
+          {theme.scheme === 'dark' && (
+            <span className={classes.themeToggle}>&#9728;</span>
+          )}
+          {theme.scheme === 'light' && (
+            <span className={classes.themeToggle}>&#9680;</span>
+          )}
+        
+        {/* <div className={classes.outerCircle}>
           <div className={classes.innerCircle}></div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

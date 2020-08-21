@@ -67,6 +67,12 @@
   right: 2px;
 }
 
+.themeToggle {
+  width: 20px;
+  display: inline-block;
+  text-align: center;
+}
+
 @media screen and (max-width: 1000px) {
   .NavBar {
     display: flex;

@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./banner.module.css";
 import avi from "../../../assets/images/avi.png";
+import Img from "../../../common/img/img.component";
 
 const Banner = () => {
   return (
@@ -68,7 +69,7 @@ const Banner = () => {
         </span>
       </div>
       <div className={classes.avi}>
-        <img src={avi} alt="Faisal Rashid" />
+        <Img src={avi} alt="Faisal Rashid" />
       </div>
     </div>
   );

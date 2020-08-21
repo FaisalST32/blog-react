@@ -1,0 +1,13 @@
+.imgHidden {
+  display: block;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  transition: visibility 0s 500ms, opacity 500ms linear;
+}
+
+.imgShown {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
