@@ -9,7 +9,7 @@ const Banner = () => {
       <div className={classes.info}>
         <span className={classes.greeting}>Hi, I'm</span>
         <span className={classes.name}>Faisal Rashid</span> 
-        <span className={classes.title}>Senior Software Engineer at DealerSocket India</span>
+        <span className={classes.title}>Lead Software Engineer at Playment</span>
         <span className={classes.description}>Full-Stack Web Development | App Development</span>  
         <span className={classes.socialLinks}>
           <ul>
