@@ -1,111 +1,107 @@
 .banner {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
 .info {
-  margin-right: 20px;
+	margin-right: 20px;
 }
 
 .info span {
-  display: block;
+	display: block;
 }
 
 .info .greeting {
-  font-size: 3rem;
-  font-weight: 100;
-  line-height: 2.5rem;
+	font-size: 3rem;
+	font-weight: 100;
+	line-height: 2.5rem;
 }
 .info .name {
-  font-size: 3rem;
-  font-weight: 900;
+	font-size: 3rem;
+	font-weight: 900;
 }
 .info .title {
-  font-size: 2rem;
-  font-weight: 100;
+	font-size: 2rem;
+	font-weight: 100;
 }
 .info .description {
-  font-weight: 100;
+	font-weight: 100;
 }
 
 .avi img {
-  width: 400px;
-  border-bottom-left-radius: 15px 255px;
-  border-bottom-right-radius: 225px 15px;
-  border-top-left-radius: 255px 15px;
-  border-top-right-radius: 15px 225px;
-  overflow: hidden;
-  border: solid 2px purple;
+	width: 400px;
+	border-bottom-left-radius: 15px 255px;
+	border-bottom-right-radius: 225px 15px;
+	border-top-left-radius: 255px 15px;
+	border-top-right-radius: 15px 225px;
+	overflow: hidden;
+	border: solid 2px purple;
 }
 
 .socialLinks img {
-  height: 20px;
-  vertical-align: middle;
-  transition: all 200ms ease-out;
+	height: 20px;
+	vertical-align: middle;
+	transition: all 100ms ease-out;
 }
 
-.socialLinks .link:hover img{
-  transform: scale(1.1, 1.1)
+.socialLinks .link:hover img {
+	transform: scale(1.1, 1.1);
 }
-.socialLinks ul{
-  list-style-type: none;
-  padding-left: 0;
+.socialLinks ul {
+	list-style-type: none;
+	padding-left: 0;
 }
-.socialLinks ul>li{
-  display: inline-block;
-}
-
-.socialLinks ul li{
-  margin-right: 15px;
-  cursor: pointer;
+.socialLinks ul > li {
+	display: inline-block;
 }
 
+.socialLinks ul li {
+	margin-right: 15px;
+	cursor: pointer;
+}
 
-.socialLinks li a{
-  text-decoration: none;
-  color: inherit;
+.socialLinks li a {
+	text-decoration: none;
+	color: inherit;
 }
 
 .socialLinks {
-  display: block;
-  
+	display: block;
 }
 
 .socialLinks .username {
-  display: none;
+	display: none;
 }
-
 
 @media screen and (max-width: 1000px) {
-  .banner {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding-top: 0;
-    height: 100vh;
-    box-sizing: border-box;
-  }
-  .avi img {
-    width: 90%;
-    margin-top: 20px;
-  }
-  .avi {
-    text-align: center;
-  }
+	.banner {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0;
+		height: 100vh;
+		box-sizing: border-box;
+	}
+	.avi img {
+		width: 90%;
+		margin-top: 20px;
+	}
+	.avi {
+		text-align: center;
+	}
 
-  .info .title, .greeting {
-    font-size: 1.5rem;
-  }
+	.info .title,
+	.greeting {
+		font-size: 1.5rem;
+	}
 
-  .greeting {
-    line-height: 1.2rem;
+	.greeting {
+		line-height: 1.2rem;
+	}
 
-  }
-
-  .info {
-    margin-right: 0;
-  }
+	.info {
+		margin-right: 0;
+	}
 }
-
